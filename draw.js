@@ -14,8 +14,13 @@ var circle = function(x, y) {
 var g=function(n){
     var circ = d3.select("svg")
 		.selectAll("circle")
+		.data(d)
 		.enter();
-	circ.append("circle").attr("cx", d[2 * n]).attr("cx", d[2 * n + 1]).attr("r", 10);
+	circ.append("circle")
+		
+		.attr("cx", function(d) {return d/100;})
+		.attr("cy", function(d, i) {return i;})
+		.attr("r", 5);
 };
 
 for (i = 0; i < d.length / 2; i ++){
