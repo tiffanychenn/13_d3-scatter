@@ -8,8 +8,8 @@ var g=function(n){
 		.enter();
 	circ.append("circle")
 		
-		.attr("cx", function(d) {return d[0]/100;})
-		.attr("cy", function(d) {return d[1];})
+		.attr("cx", function(d) {return d[0]/100 + 10;})
+		.attr("cy", function(d) {return 490 - d[1];})
 		.attr("r", 5);
 };
 
